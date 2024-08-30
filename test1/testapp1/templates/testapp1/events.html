@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Calendar Events</title>
+</head>
+<body>
+    <h1>Your Google Calendar Events</h1>
+    <ul>
+        {% for event in events %}
+        <li>{{ event.summary }} ({{ event.start.dateTime }})</li>
+        {% empty %}
+        <li>No upcoming events found.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
